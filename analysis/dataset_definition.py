@@ -151,23 +151,30 @@ measures.define_defaults(
 )
 
 measures.define_measure(
-    name="cvd_attendances_monthly_ages",
-    group_by={"age_group": age_group},
+    name="cvd_attendances_monthly_overall"
 )
+
+# measures.define_measure(
+#     name="cvd_attendances_monthly_ages",
+#     group_by={"age_group": age_group},
+# )
 
 measures.define_measure(
     name="cvd_attendances_monthly_sex",
-    group_by={"sex": sex},
+    group_by={"age_group": age_group, 
+              "sex": sex},
 )
 
 measures.define_measure(
     name="cvd_attendances_monthly_imd",
-    group_by={"imd_quintile": imd_quintile},
+    group_by={"age_group": age_group,
+              "imd_quintile": imd_quintile},
 )
 
 measures.define_measure(
     name="cvd_attendances_monthly_ethnicity",
-    group_by={"ethnicity_group": ethnicity_group},
+    group_by={"age_group": age_group,
+              "ethnicity_group": ethnicity_group},
 )
 
 

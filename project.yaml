@@ -14,3 +14,12 @@ actions:
       moderately_sensitive:
         analysis: output/preprocess_results.csv
         #analysis_summary: output/preprocess_summary.csv.gz
+
+  age_standardize:
+    run: python:v2 analysis/age_standardize.py
+    needs: [analysis]
+    outputs:
+      moderately_sensitive:
+        age_standardized_sex: output/age_standardized_sex.csv
+        age_standardized_imd_quintile: output/age_standardized_imd_quintile.csv
+        age_standardized_ethnicity_group: output/age_standardized_ethnicity_group.csv
